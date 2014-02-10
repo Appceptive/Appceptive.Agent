@@ -1,9 +1,0 @@
-C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Core\bin\Release\Appceptive.Agent.Core.dll
-C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Core\bin\Release\Appceptive.Agent.Core.pdb
-C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Core\bin\Release\Newtonsoft.Json.dll
-C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Core\bin\Release\System.Net.Http.Formatting.dll
-C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Core\bin\Release\Newtonsoft.Json.xml
-C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Core\bin\Release\System.Net.Http.Formatting.xml
-C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Core\obj\Release\Appceptive.Agent.Core.csprojResolveAssemblyReference.cache
-C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Core\obj\Release\Appceptive.Agent.Core.dll
-C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Core\obj\Release\Appceptive.Agent.Core.pdb
