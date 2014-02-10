@@ -1,0 +1,17 @@
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\_tmpIntermediateAT\Appceptive.Agent.Serilog.csprojResolveAssemblyReference.cache
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\_tmpIntermediateAT\Appceptive.Agent.Serilog.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\_tmpIntermediateAT\Appceptive.Agent.Serilog.pdb
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\Appceptive.Agent.Serilog.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\Appceptive.Agent.Serilog.pdb
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\Appceptive.Agent.Core.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\Serilog.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\Serilog.FullNetFx.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\Newtonsoft.Json.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\System.Net.Http.Formatting.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\Appceptive.Agent.Core.pdb
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\Serilog.pdb
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\Serilog.xml
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\Serilog.FullNetFx.pdb
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\Serilog.FullNetFx.xml
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\Newtonsoft.Json.xml
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\AutoTest.Net\System.Net.Http.Formatting.xml

@@ -1,0 +1,17 @@
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\Appceptive.Agent.Serilog.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\Appceptive.Agent.Serilog.pdb
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\Appceptive.Agent.Core.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\Serilog.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\Serilog.FullNetFx.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\Appceptive.Agent.Core.pdb
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\Serilog.pdb
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\Serilog.xml
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\Serilog.FullNetFx.pdb
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\Serilog.FullNetFx.xml
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\obj\Debug\Appceptive.Agent.Serilog.csprojResolveAssemblyReference.cache
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\obj\Debug\Appceptive.Agent.Serilog.dll
+C:\Users\Stefan\Desktop\Development\Appceptive.Agent\src\Appceptive.Agent.Serilog\obj\Debug\Appceptive.Agent.Serilog.pdb
