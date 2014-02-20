@@ -13,6 +13,7 @@ namespace Appceptive.Agent.Core
         private readonly IList<Event> _events = new List<Event>(); 
  
 	    public string Name { get; private set; }
+		public string Server { get; private set; }
 		public long Duration { get; private set; }
         public bool Important { get; private set; }
         public DateTime Timestamp { get; private set; }
@@ -33,6 +34,7 @@ namespace Appceptive.Agent.Core
 		{
 		    Timestamp = DateTime.UtcNow;
 		    Name = name;
+			Server = Environment.MachineName;
 		}
 
         public void FlagImportant()

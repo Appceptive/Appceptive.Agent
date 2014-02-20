@@ -21,14 +21,18 @@ namespace Appceptive.Agent.Core
             _activityStorage = activityStorage;
         }
 
-        public static void Start(Action<Configuration> configure)
+        public static void Start(Action<Configuration> configure = null)
         {
 			if(_instance != null) 
 				throw new InvalidOperationException("Appceptive agent has already been started.");
 
 			var configuration = new Configuration();
-			configure(configuration);
 
+			if(configure != null)
+			{
+				configure(configuration);
+			}
+			
 			var apiClient = new ApiClient(configuration.ApiUrl, configuration.ApiKey);
 			var activityQueue = new ActivityQueue(configuration.Filters);
             var activityDispatcherService = new ActivityDispatcherService(configuration.ApplicationName, activityQueue, apiClient)

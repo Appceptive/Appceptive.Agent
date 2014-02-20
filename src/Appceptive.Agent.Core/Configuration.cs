@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using Appceptive.Agent.Core.Logging;
 
 namespace Appceptive.Agent.Core
@@ -17,7 +18,9 @@ namespace Appceptive.Agent.Core
 
 	    public Configuration()
 	    {
-		    ApiUrl = "http://api.appceptive.com";
+			ApiUrl = ConfigurationManager.AppSettings["Appceptive.ApiUrl"] ?? "http://api.appceptive.com";
+			ApiKey = ConfigurationManager.AppSettings["Appceptive.ApiKey"];
+		    ApplicationName = ConfigurationManager.AppSettings["Appceptive.ApplicationName"];
 		    ActivityDispatchInterval = TimeSpan.FromSeconds(60);
 		    ActivityBatchSize = 500;
 	        ActivityDispatchAttempts = 5;
