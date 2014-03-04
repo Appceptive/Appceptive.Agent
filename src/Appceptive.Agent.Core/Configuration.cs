@@ -24,7 +24,7 @@ namespace Appceptive.Agent.Core
 		    ActivityDispatchInterval = TimeSpan.FromSeconds(60);
 		    ActivityBatchSize = 500;
 	        ActivityDispatchAttempts = 5;
-	        Logger = new NullLogger();
+	        Logger = new DevNullLogger();
             Filters = new List<Predicate<Activity>>();
 	    }
 

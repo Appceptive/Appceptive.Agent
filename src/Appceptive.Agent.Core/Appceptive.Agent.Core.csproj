@@ -48,16 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityScope.cs" />
+    <Compile Include="ActivityScopeStorage.cs" />
     <Compile Include="ApiClient.cs" />
     <Compile Include="Appceptive.cs" />
     <Compile Include="AppceptiveAgent.cs" />
     <Compile Include="Configuration.cs" />
-    <Compile Include="DefaultActivityStorage.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Json\DictionaryKeysAreNotPropertyNamesJsonConverter.cs" />
+    <Compile Include="Logging\Logger.cs" />
     <Compile Include="Logging\ILogger.cs" />
-    <Compile Include="IActivityStorage.cs" />
-    <Compile Include="Logging\NullLogger.cs" />
+    <Compile Include="Logging\DevNullLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Activity.cs" />
     <Compile Include="ActivityDispatcherService.cs" />

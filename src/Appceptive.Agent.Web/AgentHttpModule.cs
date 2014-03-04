@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Web;
+using Appceptive.Agent.Core;
 
 namespace Appceptive.Agent.Web
 {
@@ -18,22 +18,19 @@ namespace Appceptive.Agent.Web
             var request = context.Request;
             var url = request.Url.ToString();
             var name = url;
-	        var stopwatch = Stopwatch.StartNew();
 
-            context.Items["Appceptive.Stopwatch"] = stopwatch;
-
-            Core.Appceptive.BeginActivity(name);
+            Core.Appceptive.BeginActivityScope(name);
             Core.Appceptive.AddActivityProperty("Url", url);
             Core.Appceptive.AddActivityProperty("UserAgent", request.UserAgent);
         }
 
         protected void EndRequest(object sender, EventArgs e)
         {
-            var context = HttpContext.Current;
-	        var stopwatch = (Stopwatch) context.Items["Appceptive.Stopwatch"];
-            stopwatch.Stop();
+            var scope = ActivityScope.Current;
+            if (scope == null)
+                return;
 
-			Core.Appceptive.EndCurrentActivity(stopwatch.ElapsedMilliseconds);
+            scope.Dispose();
         }
         
         public void Dispose()

@@ -44,7 +44,6 @@
     <Compile Include="AgentInitializer.cs" />
     <Compile Include="AgentHttpModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebActivityStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Appceptive.Agent.Web.nuspec" />
