@@ -10,13 +10,11 @@
     <iconUrl>http://appceptive.com/images/appceptive-nuget.png</iconUrl>
     <tags>appceptive serilog events logging analytics</tags>
     <dependencies>
-      <dependency id="Serilog" version="1.2.4" />
-      <dependency id="Microsoft.AspNet.WebApi.Client" version="5.0.0" />
+      <dependency id="Serilog" version="1.2.25" />
+      <dependency id="Appceptive.Agent.Core" version="0.1.0" />
     </dependencies>
   </metadata>
-  <files>
-    <file src="bin\Release\Appceptive.Agent.Core.dll" target="lib\net45"/>
-    <file src="bin\Release\Appceptive.Agent.Core.pdb" target="lib\net45"/>
+  <files>    
     <file src="bin\Release\Appceptive.Agent.Serilog.dll" target="lib\net45"/>
     <file src="bin\Release\Appceptive.Agent.Serilog.pdb" target="lib\net45"/>
   </files>

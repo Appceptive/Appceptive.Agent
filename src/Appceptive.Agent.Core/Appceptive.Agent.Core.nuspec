@@ -1,20 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Appceptive.Agent.Web</id>
+    <id>Appceptive.Agent.Core</id>
     <version>0.1.0</version>
     <authors>Appceptive</authors>
-    <description>Facilitates simple integration of your ASP.NET web application with Appceptive</description>
+    <description>Facilitiates dispatching events and activities to Appceptive end points.</description>
     <language>en-US</language>
     <projectUrl>http://appceptive.com</projectUrl>
     <iconUrl>http://appceptive.com/images/appceptive-nuget.png</iconUrl>
     <tags>appceptive events logging analytics</tags>
     <dependencies>
-      <dependency id="Appceptive.Agent.Core" version="0.1.0" />
+      <dependency id="Microsoft.AspNet.WebApi.Client" version="5.1.1" />
+      <dependency id="Newtonsoft.Json" version="6.0.1" />      
     </dependencies>
   </metadata>
-  <files>    
-    <file src="bin\Release\Appceptive.Agent.Web.dll" target="lib\net45"/>
-    <file src="bin\Release\Appceptive.Agent.Web.pdb" target="lib\net45"/>
+  <files>
+    <file src="bin\Release\Appceptive.Agent.Core.dll" target="lib\net45"/>
+    <file src="bin\Release\Appceptive.Agent.Core.pdb" target="lib\net45"/>    
   </files>
 </package>
