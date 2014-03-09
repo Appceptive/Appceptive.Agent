@@ -2,7 +2,7 @@
 
 namespace Appceptive.Agent.Core.Logging
 {
-    public class NullLogger : ILogger
+    public class DevNullLogger : ILogger
     {
         public void Debug(string format, params object[] args)
         {

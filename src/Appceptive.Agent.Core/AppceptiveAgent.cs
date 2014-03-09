@@ -1,4 +1,6 @@
-﻿namespace Appceptive.Agent.Core
+﻿using Appceptive.Agent.Core.Logging;
+
+namespace Appceptive.Agent.Core
 {
     public class AppceptiveAgent
     {
@@ -13,14 +15,14 @@
 
         public void Start()
         {
-            Appceptive.Logger.Information("Appceptive agent starting.");
+            Logger.Information("Appceptive agent starting.");
 
             _activityDispatcherService.Start();
         }
 
         public void Shutdown()
         {
-            Appceptive.Logger.Information("Appceptive agent shutting down.");
+            Logger.Information("Appceptive agent shutting down.");
 
             _activityDispatcherService.Stop();
         }

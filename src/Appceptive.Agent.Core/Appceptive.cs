@@ -6,45 +6,26 @@ namespace Appceptive.Agent.Core
     public class Appceptive
     {
         private static AppceptiveAgent _instance;
-	    private static IActivityStorage _activityStorage = new DefaultActivityStorage();
-        
-        private static Activity CurrentActivity
-        {
-            get { return _activityStorage.CurrentActivity; }
-            set { _activityStorage.CurrentActivity = value; }
-        }
-
-	    public static ILogger Logger { get; private set; }
-
-	    public static void SetActivityStorage(IActivityStorage activityStorage)
-        {
-            _activityStorage = activityStorage;
-        }
-
-        public static void Start(Action<Configuration> configure = null)
+	    
+	    public static void Start(Action<Configuration> configure = null)
         {
 			if(_instance != null) 
 				throw new InvalidOperationException("Appceptive agent has already been started.");
 
 			var configuration = new Configuration();
-
+            
 			if(configure != null)
 			{
 				configure(configuration);
 			}
-			
+
+            Logger.Current = configuration.Logger;
+
 			var apiClient = new ApiClient(configuration.ApiUrl, configuration.ApiKey);
 			var activityQueue = new ActivityQueue(configuration.Filters);
-            var activityDispatcherService = new ActivityDispatcherService(configuration.ApplicationName, activityQueue, apiClient)
-            {
-                ActivityBatchSize = configuration.ActivityBatchSize,
-                ActivityDispatchAttempts = configuration.ActivityDispatchAttempts,
-                ActivityDispatchInterval = configuration.ActivityDispatchInterval
-            };
+	        var activityDispatcherService = new ActivityDispatcherService(configuration, activityQueue, apiClient);
 
-            Logger = configuration.Logger;
-
-			_instance = new AppceptiveAgent(activityDispatcherService, activityQueue);
+            _instance = new AppceptiveAgent(activityDispatcherService, activityQueue);
             _instance.Start();
         }
 
@@ -55,75 +36,68 @@ namespace Appceptive.Agent.Core
             _instance.Shutdown();
         }
 
-        public static void BeginActivity(string name)
+        public static ActivityScope BeginActivityScope(string name)
         {
             EnsureStarted();
 
-            if (CurrentActivity != null)
-                throw new InvalidOperationException("Unable to create a new activity while one is already running.");
+            var scope = ActivityScope.Current;
+            if (scope != null)
+                throw new InvalidOperationException("Unable to create a new activity scope as there is already an active scope.");
 
-            Logger.Information("Beginning Activity: {0}", name);
-            CurrentActivity = new Activity(name);
-        }
+            Logger.Information("Beginning Activity: {0}.", name);
 
-        public static void EndCurrentActivity(long duration)
-        {
-            EnsureStarted();
-
-            if (CurrentActivity == null)
-                return;
-
-			Logger.Information("Ending Activity: {0}, took {1}.", CurrentActivity.Name, duration);
-	        CurrentActivity.End(duration);
-
-            _instance.QueueActivity(CurrentActivity);
-            CurrentActivity = null;
+            var activity = new Activity(name);
+            return ActivityScope.Create(_instance, activity);
         }
 
         public static void AddActivityProperty(string name, object value)
         {
             EnsureStarted();
 
-            if (CurrentActivity == null)
+            var scope = ActivityScope.Current;
+            if(scope == null)
                 return;
 
-            CurrentActivity.AddProperty(name, value);
+            scope.Activity.AddProperty(name, value);
         }
 
         public static void AddActivityEvent(Event @event)
         {
             EnsureStarted();
 
-            if (CurrentActivity == null)
+            var scope = ActivityScope.Current;
+            if (scope == null)
                 return;
 
-            CurrentActivity.AddEvent(@event);
+            scope.Activity.AddEvent(@event);
         }
 
         public static void SetActivityName(string name)
         {
             EnsureStarted();
 
-            if (CurrentActivity == null)
+            var scope = ActivityScope.Current;
+            if (scope == null)
                 return;
 
-            CurrentActivity.ChangeName(name);
+            scope.Activity.ChangeName(name);
         }
 
         public static void FlagActivityImportant()
         {
             EnsureStarted();
 
-            if (CurrentActivity == null)
+            var scope = ActivityScope.Current;
+            if (scope == null)
                 return;
 
-            CurrentActivity.FlagImportant();
+            scope.Activity.FlagImportant();
         }
 
         private static void EnsureStarted()
         {
             if (_instance == null)
-				throw new InvalidOperationException("Agent has not been started, ensure you have started the agent first by calling AppceptiveAgent.Start().");
+				throw new InvalidOperationException("The Appceptive agent has not been started, ensure you have started the agent first by calling Appceptive.Start().");
         }
     }
 }

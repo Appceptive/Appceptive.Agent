@@ -1,3 +1,5 @@
+using System.Web;
+using Appceptive.Agent.Core;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
 namespace Appceptive.Agent.Web
@@ -6,7 +8,9 @@ namespace Appceptive.Agent.Web
     {
         public static void Start()
         {
-            Core.Appceptive.SetActivityStorage(new WebActivityStorage());
+            ActivityScopeStorage.GetCurrentScope = () =>  (ActivityScope) HttpContext.Current.Items[ActivityScopeStorage.CurrentScopeKey];
+            ActivityScopeStorage.SetCurrentScope = scope => HttpContext.Current.Items[ActivityScopeStorage.CurrentScopeKey] = scope;
+
             DynamicModuleUtility.RegisterModule(typeof(AgentHttpModule));
         }
     }

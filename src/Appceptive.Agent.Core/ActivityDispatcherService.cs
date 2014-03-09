@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Timers;
+using Appceptive.Agent.Core.Logging;
 
 namespace Appceptive.Agent.Core
 {
@@ -10,15 +11,17 @@ namespace Appceptive.Agent.Core
         private readonly ActivityQueue _queue;
 	    private readonly ApiClient _apiClient;
         private readonly Timer _timer;
+        private readonly TimeSpan _activityDispatchInterval;
+        private readonly int _activityBatchSize;
+        private readonly int _activityDispatchAttempts;
 
-        internal TimeSpan ActivityDispatchInterval { get; set; }
-        internal int ActivityBatchSize { get; set; }
-        internal int ActivityDispatchAttempts { get; set; }
-
-	    public ActivityDispatcherService(string applicationName, ActivityQueue queue, ApiClient apiClient)
+	    public ActivityDispatcherService(Configuration configuration, ActivityQueue queue, ApiClient apiClient)
         {
-	        _applicationName = applicationName;
-	        _queue = queue;
+	        _applicationName = configuration.ApplicationName;
+	        _activityDispatchInterval = configuration.ActivityDispatchInterval;
+	        _activityBatchSize = configuration.ActivityBatchSize;
+	        _activityDispatchAttempts = configuration.ActivityDispatchAttempts;
+            _queue = queue;
 		    _apiClient = apiClient;
 
 	        _timer = new Timer {AutoReset = false};
@@ -29,9 +32,9 @@ namespace Appceptive.Agent.Core
         {
 	        Task.Factory.StartNew(async () =>
 		    {
-			    var activities = _queue.GetQueuedActivities(ActivityBatchSize);
+                var activities = _queue.GetQueuedActivities(_activityBatchSize);
 
-                Appceptive.Logger.Information("Attempting to upload {0} activities to Appceptive.", activities.Count);
+                Logger.Information("Attempting to upload {0} activities to Appceptive.", activities.Count);
 
 			    foreach (var activity in activities)
 			    {
@@ -43,12 +46,12 @@ namespace Appceptive.Agent.Core
 			        {
 			            activity.DispatchFailed();
 
-			            if (activity.DispatchAttempts < ActivityDispatchAttempts)
+                        if (activity.DispatchAttempts < _activityDispatchAttempts)
 			            {
 			                _queue.QueueActivity(activity);
 			            }
 
-                        Appceptive.Logger.Error(ex, "Failed to upload activity to Appceptive for application {0}.", _applicationName);
+                        Logger.Error(ex, "Failed to upload activity to Appceptive for application {0}.", _applicationName);
 			        }
 			    }
 
@@ -58,15 +61,15 @@ namespace Appceptive.Agent.Core
 
         public void Start()
         {
-            Appceptive.Logger.Information("Activity dispatcher starting.");
+            Logger.Information("Activity dispatcher starting.");
 
-            _timer.Interval = ActivityDispatchInterval.TotalMilliseconds;
+            _timer.Interval = _activityDispatchInterval.TotalMilliseconds;
 			_timer.Start();
         }
 
         public void Stop()
         {
-            Appceptive.Logger.Information("Activity dispatcher shutting down.");
+            Logger.Information("Activity dispatcher shutting down.");
             
             _timer.Dispose();
         }
