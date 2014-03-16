@@ -29,6 +29,8 @@ namespace Appceptive.Agent.Log4Net
                 {
                     @event.WithProperty(property.Key.ToString(), property.Value);
                 }
+                
+                Core.Appceptive.AddActivityEvent(@event);
             }            
         }
 
