@@ -9,13 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appceptive.Agent.Serilog", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appceptive.Agent.Web", "src\Appceptive.Agent.Web\Appceptive.Agent.Web.csproj", "{3920A70C-893F-4EE3-8A1E-8D945714FBAE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0D142F3F-AB3B-4187-86F9-8FF09BB4F1CD}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appceptive.Agent.Log4Net", "src\Appceptive.Agent.Log4Net\Appceptive.Agent.Log4Net.csproj", "{DDDC9DA9-BC23-4EF8-A01E-E98BA3ABF459}"
 EndProject
 Global
