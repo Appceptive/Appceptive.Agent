@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0D142F
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appceptive.Agent.Log4Net", "src\Appceptive.Agent.Log4Net\Appceptive.Agent.Log4Net.csproj", "{DDDC9DA9-BC23-4EF8-A01E-E98BA3ABF459}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{3920A70C-893F-4EE3-8A1E-8D945714FBAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3920A70C-893F-4EE3-8A1E-8D945714FBAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3920A70C-893F-4EE3-8A1E-8D945714FBAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDDC9DA9-BC23-4EF8-A01E-E98BA3ABF459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDDC9DA9-BC23-4EF8-A01E-E98BA3ABF459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDDC9DA9-BC23-4EF8-A01E-E98BA3ABF459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDDC9DA9-BC23-4EF8-A01E-E98BA3ABF459}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
