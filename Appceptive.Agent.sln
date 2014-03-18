@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appceptive.Agent.Core", "src\Appceptive.Agent.Core\Appceptive.Agent.Core.csproj", "{B926E6E0-D6BD-42AD-A044-CBD1B93DEC8C}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appceptive.Agent.Web", "src\Appceptive.Agent.Web\Appceptive.Agent.Web.csproj", "{3920A70C-893F-4EE3-8A1E-8D945714FBAE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appceptive.Agent.Log4Net", "src\Appceptive.Agent.Log4Net\Appceptive.Agent.Log4Net.csproj", "{DDDC9DA9-BC23-4EF8-A01E-E98BA3ABF459}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{E8146A77-2435-4200-9142-B8F4AAD3E6D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appceptive.Agent.Samples.MVC", "sample\Appceptive.Agent.Samples.MVC\Appceptive.Agent.Samples.MVC.csproj", "{1C7E3649-2E53-4642-97C0-81F2AEA1368C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +37,15 @@ Global
 		{DDDC9DA9-BC23-4EF8-A01E-E98BA3ABF459}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDDC9DA9-BC23-4EF8-A01E-E98BA3ABF459}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDDC9DA9-BC23-4EF8-A01E-E98BA3ABF459}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C7E3649-2E53-4642-97C0-81F2AEA1368C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C7E3649-2E53-4642-97C0-81F2AEA1368C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C7E3649-2E53-4642-97C0-81F2AEA1368C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C7E3649-2E53-4642-97C0-81F2AEA1368C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C7E3649-2E53-4642-97C0-81F2AEA1368C} = {E8146A77-2435-4200-9142-B8F4AAD3E6D6}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,44 @@
+﻿using System;
+using System.Web.Mvc;
+using System.Web.Routing;
+using Appceptive.Agent.Serilog;
+using Serilog;
+
+namespace Appceptive.Agent.Samples.MVC
+{
+	public class MvcApplication : System.Web.HttpApplication
+	{
+        protected void Application_Start()
+		{
+			AreaRegistration.RegisterAllAreas();
+			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+			RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+			Core.Appceptive.Start(c =>
+			{
+
+<<<<<<< HEAD
+                c.ApiKey = "a991610a-7743-497e-93ed-8414fb411854";
+=======
+                c.ApiKey = "a75b06fd-8028-4acf-9f52-a49f8399bb8d";
+>>>>>>> 213e4a5fc969e6f33e5306b7620fc268eabd0ea5
+			    //c.ApiKey = "e3a8dc97-97f9-41f9-bfec-874eb675b4fc";
+				c.ApplicationName = "Sample MVC App 1";
+			    c.ApiUrl = "http://localhost:8888";
+			    c.ActivityDispatchInterval = TimeSpan.FromSeconds(5);
+
+                c.Filter(activity =>
+                {
+                    var url = (string) activity.Properties["Url"];
+
+                    return url.Contains("/Images/");
+                });
+			});
+
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.ColoredConsole()
+                .WriteTo.Appceptive()
+                .CreateLogger();
+		}
+	}
+}
