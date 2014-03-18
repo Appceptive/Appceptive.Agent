@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Appceptive.Agent.Log4Net</id>
+    <version>0.1.0</version>
+    <authors>Appceptive</authors>
+    <description>Allows Log4Net to be configured so that logs are synchronised with Appceptive</description>
+    <language>en-US</language>
+    <projectUrl>http://appceptive.com</projectUrl>
+    <iconUrl>http://appceptive.com/images/appceptive-nuget.png</iconUrl>
+    <tags>appceptive log4net events logging analytics</tags>
+    <dependencies>
+      <dependency id="log4net" version="2.0.3" />
+      <dependency id="Appceptive.Agent.Core" version="0.1.0" />
+    </dependencies>
+  </metadata>
+  <files>    
+    <file src="bin\Release\Appceptive.Agent.Log4Net.dll" target="lib\net45"/>
+    <file src="bin\Release\Appceptive.Agent.Log4Net.pdb" target="lib\net45"/>
+  </files>
+</package>

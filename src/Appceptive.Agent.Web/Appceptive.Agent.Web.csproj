@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Appceptive.Agent.Web.nuspec" />
+    <None Include="Appceptive.Agent.Web.nuspec">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Appceptive.Agent\src\Appceptive.Agent.Core\Appceptive.Agent.Core.csproj">
