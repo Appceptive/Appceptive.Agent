@@ -7,3 +7,5 @@ Current agents include:
 
 * Appceptive.Agent.Serilog
 * Appceptive.Agent.Log4Net
+
+and can be installed via nuget.
