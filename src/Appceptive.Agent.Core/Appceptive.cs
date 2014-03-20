@@ -6,27 +6,35 @@ namespace Appceptive.Agent.Core
     public class Appceptive
     {
         private static AppceptiveAgent _instance;
+
+        public static Configuration Configuration { get; private set; }
 	    
 	    public static void Start(Action<Configuration> configure = null)
         {
 			if(_instance != null) 
 				throw new InvalidOperationException("Appceptive agent has already been started.");
 
-			var configuration = new Configuration();
-            
 			if(configure != null)
 			{
-				configure(configuration);
+			    Configure(configure);
 			}
 
-            Logger.Current = configuration.Logger;
-
-			var apiClient = new ApiClient(configuration.ApiUrl, configuration.ApiKey);
-			var activityQueue = new ActivityQueue(configuration.Filters);
-	        var activityDispatcherService = new ActivityDispatcherService(configuration, activityQueue, apiClient);
+            var apiClient = new ApiClient();
+			var activityQueue = new ActivityQueue();
+	        var activityDispatcherService = new ActivityDispatcherService(activityQueue, apiClient);
 
             _instance = new AppceptiveAgent(activityDispatcherService, activityQueue);
             _instance.Start();
+        }
+
+        public static void Configure(Action<Configuration> configure)
+        {
+            if (Configuration == null)
+                Configuration = new Configuration();
+
+            configure(Configuration);
+
+            Logger.Current = Configuration.Logger;
         }
 
         public static void Shutdown()

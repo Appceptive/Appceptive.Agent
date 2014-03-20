@@ -7,7 +7,6 @@ namespace Appceptive.Agent.Samples.MVC.Controllers
 {
     public class SerilogController : Controller
     {
-
         public ActionResult LogError()
         {
             var ex = new Exception("Foo");

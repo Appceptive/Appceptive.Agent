@@ -6,10 +6,30 @@ namespace Appceptive.Agent.Web
 {
     public class AgentHttpModule : IHttpModule
     {
+        private static bool _agentStarted;
+        private static readonly object _agentStartedLock = new object();
+
         public void Init(HttpApplication context)
         {
             context.BeginRequest += BeginRequest;
             context.EndRequest += EndRequest;
+
+            StartAppceptiveAgent();
+        }
+
+        private static void StartAppceptiveAgent()
+        {
+            if (_agentStarted)
+                return;
+
+            lock (_agentStartedLock)
+            {
+                if (_agentStarted)
+                    return;
+
+                Core.Appceptive.Start();
+                _agentStarted = true;
+            }
         }
 
         protected void BeginRequest(object sender, EventArgs e)

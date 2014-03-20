@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,13 +6,11 @@ namespace Appceptive.Agent.Core
 {
     public class ActivityQueue
     {
-        private readonly IList<Predicate<Activity>> _filters;
         private readonly ConcurrentQueue<Activity> _activities;
 
-        public ActivityQueue(IList<Predicate<Activity>> filters)
+        public ActivityQueue()
         {
             _activities = new ConcurrentQueue<Activity>();
-            _filters = filters;
         }
 
         public void QueueActivity(Activity activity)
@@ -30,7 +27,7 @@ namespace Appceptive.Agent.Core
                 Activity activity;
                 _activities.TryDequeue(out activity);
 
-                if (activity == null || _filters.Any(filter => filter(activity)))
+                if (activity == null || Appceptive.Configuration.Filters.Any(filter => filter(activity)))
                     continue;
 
                 activities.Add(activity);

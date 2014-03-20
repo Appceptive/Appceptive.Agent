@@ -7,15 +7,6 @@ namespace Appceptive.Agent.Core
 {
     public class ApiClient
     {
-        private readonly string _apiUrl;
-        private readonly string _apiKey;
-
-        public ApiClient(string apiUrl, string apiKey)
-        {
-            _apiUrl = apiUrl;
-            _apiKey = apiKey;
-        }
-
         public async Task CreateActivity(string application, Activity activity)
 		{
 			using(var client = CreateApiClient())
@@ -49,10 +40,10 @@ namespace Appceptive.Agent.Core
 
 		private HttpClient CreateApiClient()
 		{
-			var baseAddress = new Uri(_apiUrl);
+			var baseAddress = new Uri(Appceptive.Configuration.ApiUrl);
 			var client = new HttpClient {BaseAddress = baseAddress};
 
-			client.DefaultRequestHeaders.Add("X-Api-Key", _apiKey);
+			client.DefaultRequestHeaders.Add("X-Api-Key", Appceptive.Configuration.ApiKey);
 
 			return client;
 		}
